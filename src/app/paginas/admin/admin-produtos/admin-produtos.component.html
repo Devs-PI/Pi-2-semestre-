@@ -1,0 +1,57 @@
+<app-cabecalho></app-cabecalho>
+
+<main class="admin-produtos">
+  <div class="admin-produtos__topo">
+    <div>
+      <h1>Produtos</h1>
+      <p>Gerencie o catálogo disponível para os clientes.</p>
+    </div>
+    <a routerLink="/admin/produtos/novo" class="admin-produtos__novo">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      Novo produto
+    </a>
+  </div>
+
+  <p class="admin-produtos__aviso" *ngIf="carregando">Carregando...</p>
+  <p class="admin-produtos__erro" *ngIf="mensagemErro">{{ mensagemErro }}</p>
+
+  <div class="admin-produtos__tabela" *ngIf="!carregando">
+    <div class="admin-produtos__cabecalho-tabela">
+      <span></span>
+      <span>Produto</span>
+      <span>Preço</span>
+      <span>Estoque</span>
+      <span>Ações</span>
+    </div>
+
+    <div class="admin-produtos__linha" *ngFor="let produto of listaProdutos">
+      <img class="admin-produtos__imagem" [src]="produto.url_imagem" [alt]="produto.nome" />
+      <span class="admin-produtos__nome">{{ produto.nome }}</span>
+      <span>{{ produto.preco | currency: 'BRL' }}</span>
+      <span>{{ produto.quantidade_estoque }} un.</span>
+
+      <div class="admin-produtos__acoes">
+        <a [routerLink]="['/admin/produtos/editar', produto.id]" aria-label="Editar">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+            <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4Z"></path>
+          </svg>
+        </a>
+        <button type="button" aria-label="Excluir" (click)="excluirProduto(produto.id)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+            <path d="M10 11v6"></path>
+            <path d="M14 11v6"></path>
+            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <p class="admin-produtos__aviso" *ngIf="listaProdutos.length === 0">Nenhum produto cadastrado ainda.</p>
+  </div>
+</main>

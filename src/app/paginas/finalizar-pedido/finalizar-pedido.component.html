@@ -1,0 +1,38 @@
+<app-cabecalho></app-cabecalho>
+
+<main class="finalizar-pedido">
+  <div class="finalizar-pedido__card" *ngIf="!pedidoConfirmado">
+    <h1>Revisar pedido</h1>
+
+    <div class="finalizar-pedido__linha" *ngFor="let item of carrinhoService.itensCarrinho()">
+      <span>{{ item.quantidade }}× {{ item.produto.nome }}</span>
+      <span>{{ item.produto.preco * item.quantidade | currency: 'BRL' }}</span>
+    </div>
+
+    <div class="finalizar-pedido__total">
+      <span>Total</span>
+      <span>{{ carrinhoService.valorTotal() | currency: 'BRL' }}</span>
+    </div>
+
+    <p class="finalizar-pedido__erro" *ngIf="mensagemErro">{{ mensagemErro }}</p>
+
+    <button
+      type="button"
+      (click)="confirmarPedido()"
+      [disabled]="confirmando || carrinhoService.itensCarrinho().length === 0"
+    >
+      {{ confirmando ? 'Confirmando...' : 'Confirmar pedido' }}
+    </button>
+  </div>
+
+  <div class="finalizar-pedido__sucesso" *ngIf="pedidoConfirmado">
+    <div class="finalizar-pedido__icone-sucesso">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <h1>Pedido recebido!</h1>
+    <p>Seu pedido foi registrado com sucesso e já está sendo preparado.</p>
+    <a routerLink="/produtos" class="finalizar-pedido__voltar">Voltar para os produtos</a>
+  </div>
+</main>

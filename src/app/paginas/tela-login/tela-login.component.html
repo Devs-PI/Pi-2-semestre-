@@ -1,0 +1,53 @@
+<div class="tela-login">
+  <div class="tela-login__formulario">
+    <form (ngSubmit)="entrar()" #formularioLogin="ngForm">
+      <div class="tela-login__logo">
+        <span class="tela-login__logo-marca"></span>
+        marketplace
+      </div>
+
+      <h1>Bem-vindo de volta</h1>
+      <p class="tela-login__subtitulo">Entre para continuar suas compras.</p>
+
+      <label>
+        E-mail
+        <input
+          type="email"
+          name="email"
+          placeholder="voce@email.com"
+          [(ngModel)]="email"
+          required
+        />
+      </label>
+
+      <label>
+        Senha
+        <input
+          type="password"
+          name="senha"
+          placeholder="••••••••"
+          [(ngModel)]="senha"
+          required
+        />
+      </label>
+
+      <p class="tela-login__erro" *ngIf="mensagemErro">{{ mensagemErro }}</p>
+
+      <button type="submit" [disabled]="carregando || formularioLogin.invalid">
+        {{ carregando ? 'Entrando...' : 'Entrar' }}
+      </button>
+
+      <p class="tela-login__cadastro">
+        Ainda não tem conta? <a routerLink="/cadastro">Criar conta</a>
+      </p>
+    </form>
+  </div>
+
+  <div class="tela-login__destaque">
+    <span class="tela-login__destaque-selo">marketplace · sua loja completa</span>
+    <div class="tela-login__destaque-texto">
+      <h2>Tudo que você precisa em um só lugar</h2>
+      <p>Produtos selecionados, entrega rápida e um checkout simples.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<app-cabecalho></app-cabecalho>
+
+<main class="carrinho-compras">
+  <h1>Seu carrinho</h1>
+
+  <p class="carrinho-compras__vazio" *ngIf="carrinhoService.itensCarrinho().length === 0">
+    Seu carrinho está vazio. <a routerLink="/produtos">Ver produtos</a>
+  </p>
+
+  <div class="carrinho-compras__conteudo" *ngIf="carrinhoService.itensCarrinho().length > 0">
+    <div class="carrinho-compras__lista">
+      <div
+        class="carrinho-compras__item"
+        *ngFor="let item of carrinhoService.itensCarrinho()"
+      >
+        <img
+          class="carrinho-compras__imagem"
+          [src]="item.produto.url_imagem"
+          [alt]="item.produto.nome"
+        />
+
+        <span class="carrinho-compras__nome">{{ item.produto.nome }}</span>
+
+        <div class="carrinho-compras__quantidade">
+          <button
+            type="button"
+            (click)="alterarQuantidade(item.produto.id, item.quantidade - 1)"
+          >
+            −
+          </button>
+          <span>{{ item.quantidade }}</span>
+          <button
+            type="button"
+            (click)="alterarQuantidade(item.produto.id, item.quantidade + 1)"
+          >
+            +
+          </button>
+        </div>
+
+        <span class="carrinho-compras__preco-unitario">{{ item.produto.preco | currency: 'BRL' }}</span>
+        <span class="carrinho-compras__subtotal">{{ item.produto.preco * item.quantidade | currency: 'BRL' }}</span>
+
+        <button
+          type="button"
+          class="carrinho-compras__remover"
+          aria-label="Remover"
+          (click)="removerProduto(item.produto.id)"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="carrinho-compras__resumo">
+      <h3>Resumo do pedido</h3>
+
+      <div class="carrinho-compras__linha-resumo">
+        <span>Subtotal</span>
+        <span>{{ carrinhoService.valorTotal() | currency: 'BRL' }}</span>
+      </div>
+
+      <div class="carrinho-compras__separador"></div>
+
+      <div class="carrinho-compras__total">
+        <span>Total</span>
+        <span>{{ carrinhoService.valorTotal() | currency: 'BRL' }}</span>
+      </div>
+
+      <button type="button" (click)="irParaFinalizarPedido()">
+        Finalizar pedido
+      </button>
+    </div>
+  </div>
+</main>

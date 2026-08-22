@@ -1,0 +1,19 @@
+<app-cabecalho></app-cabecalho>
+
+<main class="lista-produtos">
+  <h1>Produtos</h1>
+
+  <p class="lista-produtos__aviso" *ngIf="carregando">Carregando produtos...</p>
+  <p class="lista-produtos__erro" *ngIf="mensagemErro">{{ mensagemErro }}</p>
+  <p class="lista-produtos__aviso" *ngIf="!carregando && listaProdutos.length === 0 && !mensagemErro">
+    Nenhum produto disponível no momento.
+  </p>
+
+  <div class="lista-produtos__grid">
+    <app-cartao-produto
+      *ngFor="let produto of listaProdutos"
+      [produto]="produto"
+      (adicionarAoCarrinho)="adicionarAoCarrinho($event)"
+    ></app-cartao-produto>
+  </div>
+</main>

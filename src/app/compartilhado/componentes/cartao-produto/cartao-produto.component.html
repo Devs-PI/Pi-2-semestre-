@@ -1,0 +1,21 @@
+<article class="cartao-produto">
+  <img
+    class="cartao-produto__imagem"
+    [src]="produto.url_imagem"
+    [alt]="produto.nome"
+  />
+
+  <div class="cartao-produto__info">
+    <h3 class="cartao-produto__nome">{{ produto.nome }}</h3>
+    <p class="cartao-produto__preco">{{ produto.preco | currency: 'BRL' }}</p>
+
+    <button
+      type="button"
+      class="cartao-produto__botao"
+      [disabled]="!produto.disponivel"
+      (click)="adicionarAoCarrinho.emit(produto)"
+    >
+      {{ produto.disponivel ? 'Adicionar ao carrinho' : 'Indisponível' }}
+    </button>
+  </div>
+</article>

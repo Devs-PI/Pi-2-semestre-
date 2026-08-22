@@ -1,0 +1,65 @@
+<div class="tela-cadastro">
+  <div class="tela-cadastro__formulario">
+    <form (ngSubmit)="criarConta()" #formularioCadastro="ngForm">
+      <div class="tela-cadastro__logo">
+        <span class="tela-cadastro__logo-marca"></span>
+        marketplace
+      </div>
+
+      <h1>Criar conta</h1>
+      <p class="tela-cadastro__subtitulo">Leva menos de um minuto para começar a comprar.</p>
+
+      <label>
+        Nome
+        <input
+          type="text"
+          name="nome"
+          placeholder="Seu nome completo"
+          [(ngModel)]="nome"
+          required
+        />
+      </label>
+
+      <label>
+        E-mail
+        <input
+          type="email"
+          name="email"
+          placeholder="voce@email.com"
+          [(ngModel)]="email"
+          required
+        />
+      </label>
+
+      <label>
+        Senha
+        <input
+          type="password"
+          name="senha"
+          placeholder="••••••••"
+          [(ngModel)]="senha"
+          minlength="6"
+          required
+        />
+      </label>
+
+      <p class="tela-cadastro__erro" *ngIf="mensagemErro">{{ mensagemErro }}</p>
+
+      <button type="submit" [disabled]="carregando || formularioCadastro.invalid">
+        {{ carregando ? 'Criando conta...' : 'Criar conta' }}
+      </button>
+
+      <p class="tela-cadastro__login">
+        Já tem uma conta? <a routerLink="/login">Entrar</a>
+      </p>
+    </form>
+  </div>
+
+  <div class="tela-cadastro__destaque">
+    <span class="tela-cadastro__destaque-selo">marketplace · entrega rápida</span>
+    <div class="tela-cadastro__destaque-texto">
+      <h2>Junte-se a milhares de clientes satisfeitos</h2>
+      <p>Cadastre-se e aproveite ofertas exclusivas.</p>
+    </div>
+  </div>
+</div>

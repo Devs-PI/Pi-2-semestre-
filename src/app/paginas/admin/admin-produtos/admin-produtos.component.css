@@ -1,0 +1,129 @@
+.admin-produtos {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 32px 64px;
+}
+
+.admin-produtos__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.admin-produtos__topo h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.admin-produtos__topo p {
+  font-size: 14px;
+  color: var(--cor-texto-suave);
+  margin: 6px 0 0;
+}
+
+.admin-produtos__novo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: var(--cor-primaria);
+  color: #fff;
+  border-radius: var(--raio-botao);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.admin-produtos__novo:hover {
+  background: var(--cor-primaria-hover);
+}
+
+.admin-produtos__aviso {
+  color: var(--cor-texto-suave);
+  font-size: 14px;
+}
+
+.admin-produtos__erro {
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.admin-produtos__tabela {
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-cartao);
+  overflow: hidden;
+}
+
+.admin-produtos__cabecalho-tabela,
+.admin-produtos__linha {
+  display: grid;
+  grid-template-columns: 56px 2fr 1fr 1fr 90px;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 24px;
+}
+
+.admin-produtos__cabecalho-tabela {
+  background: var(--cor-fundo-secundaria);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cor-texto-suave);
+}
+
+.admin-produtos__linha {
+  border-top: 1px solid var(--cor-borda);
+  font-size: 14px;
+}
+
+.admin-produtos__imagem {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--cor-fundo-secundaria);
+}
+
+.admin-produtos__nome {
+  font-weight: 600;
+}
+
+.admin-produtos__acoes {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-produtos__acoes a,
+.admin-produtos__acoes button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--cor-borda);
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-texto);
+  text-decoration: none;
+}
+
+.admin-produtos__acoes a:hover,
+.admin-produtos__acoes button:hover {
+  background: var(--cor-fundo-secundaria);
+}
+
+@media (max-width: 720px) {
+  .admin-produtos__cabecalho-tabela,
+  .admin-produtos__linha {
+    grid-template-columns: 44px 1.5fr 1fr 70px;
+  }
+
+  .admin-produtos__linha span:nth-child(4) {
+    display: none;
+  }
+}

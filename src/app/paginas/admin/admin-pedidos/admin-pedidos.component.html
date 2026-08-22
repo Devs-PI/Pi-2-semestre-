@@ -1,0 +1,39 @@
+<app-cabecalho></app-cabecalho>
+
+<main class="admin-pedidos">
+  <h1>Pedidos</h1>
+  <p class="admin-pedidos__subtitulo">Acompanhe os pedidos realizados pelos clientes.</p>
+
+  <p class="admin-pedidos__aviso" *ngIf="carregando">Carregando...</p>
+  <p class="admin-pedidos__erro" *ngIf="mensagemErro">{{ mensagemErro }}</p>
+  <p class="admin-pedidos__aviso" *ngIf="!carregando && listaPedidos.length === 0 && !mensagemErro">
+    Nenhum pedido registrado ainda.
+  </p>
+
+  <article class="admin-pedidos__card" *ngFor="let pedido of listaPedidos">
+    <div class="admin-pedidos__topo">
+      <div>
+        <span class="admin-pedidos__numero">Pedido #{{ numeroPedido(pedido.id) }}</span>
+        <span class="admin-pedidos__cliente">{{ pedido.usuarios.nome }}</span>
+        <span class="admin-pedidos__data">{{ pedido.criado_em | date: "dd/MM/yyyy 'às' HH:mm" }}</span>
+      </div>
+      <span class="admin-pedidos__status" [class]="'admin-pedidos__status--' + pedido.status">
+        {{ rotuloStatus(pedido.status) }}
+      </span>
+    </div>
+
+    <div class="admin-pedidos__item" *ngFor="let item of pedido.itens_pedido">
+      <img class="admin-pedidos__imagem" [src]="item.produtos.url_imagem" [alt]="item.produtos.nome" />
+      <div class="admin-pedidos__item-info">
+        <span class="admin-pedidos__item-nome">{{ item.produtos.nome }}</span>
+        <span class="admin-pedidos__item-quantidade">Quantidade: {{ item.quantidade }}</span>
+      </div>
+      <span class="admin-pedidos__item-subtotal">{{ item.preco_unitario * item.quantidade | currency: 'BRL' }}</span>
+    </div>
+
+    <div class="admin-pedidos__total">
+      <span>Total pago</span>
+      <span>{{ pedido.valor_total | currency: 'BRL' }}</span>
+    </div>
+  </article>
+</main>

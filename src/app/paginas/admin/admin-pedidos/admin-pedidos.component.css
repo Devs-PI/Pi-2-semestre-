@@ -1,0 +1,135 @@
+.admin-pedidos {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 32px 64px;
+}
+
+.admin-pedidos h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.admin-pedidos__subtitulo {
+  font-size: 14px;
+  color: var(--cor-texto-suave);
+  margin: 0 0 28px;
+}
+
+.admin-pedidos__aviso {
+  color: var(--cor-texto-suave);
+  font-size: 14px;
+}
+
+.admin-pedidos__erro {
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.admin-pedidos__card {
+  display: block;
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-cartao);
+  padding: 28px 28px 4px;
+  margin-bottom: 20px;
+}
+
+.admin-pedidos__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.admin-pedidos__numero {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.admin-pedidos__cliente {
+  font-size: 13px;
+  color: var(--cor-texto-suave);
+  margin-left: 12px;
+}
+
+.admin-pedidos__data {
+  font-size: 13px;
+  color: var(--cor-texto-suave);
+  margin-left: 12px;
+}
+
+.admin-pedidos__status {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: rgba(216, 90, 48, 0.12);
+  color: var(--cor-primaria);
+}
+
+.admin-pedidos__status--concluido {
+  background: rgba(29, 158, 117, 0.12);
+  color: var(--cor-sucesso);
+}
+
+.admin-pedidos__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.admin-pedidos__imagem {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--cor-fundo-secundaria);
+}
+
+.admin-pedidos__item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.admin-pedidos__item-nome {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin-pedidos__item-quantidade {
+  font-size: 12px;
+  color: var(--cor-texto-suave);
+}
+
+.admin-pedidos__item-subtotal {
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.admin-pedidos__total {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-top: 1px solid var(--cor-borda);
+  margin-top: 4px;
+}
+
+.admin-pedidos__total span:first-child {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.admin-pedidos__total span:last-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cor-primaria);
+}

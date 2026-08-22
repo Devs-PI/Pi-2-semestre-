@@ -1,0 +1,145 @@
+.tela-login {
+  min-height: 100vh;
+  display: flex;
+}
+
+.tela-login__formulario {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: var(--cor-cartao);
+}
+
+.tela-login__formulario form {
+  width: 100%;
+  max-width: 380px;
+}
+
+.tela-login__formulario label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cor-texto);
+  margin-bottom: 18px;
+}
+
+.tela-login__formulario input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+  padding: 12px 16px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-botao);
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--cor-input-fundo);
+  color: var(--cor-texto);
+}
+
+.tela-login__formulario button[type='submit'] {
+  width: 100%;
+  padding: 14px 0;
+  background: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  border-radius: var(--raio-botao);
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.tela-login__formulario button[type='submit']:hover:not(:disabled) {
+  background: var(--cor-primaria-hover);
+}
+
+.tela-login__formulario button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.tela-login__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.tela-login__logo-marca {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: var(--cor-primaria);
+}
+
+.tela-login__formulario h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.tela-login__subtitulo {
+  font-size: 14px;
+  color: var(--cor-texto-suave);
+  margin: 0 0 32px;
+}
+
+.tela-login__erro {
+  color: #dc2626;
+  font-size: 13px;
+  margin: -8px 0 16px;
+}
+
+.tela-login__cadastro {
+  text-align: center;
+  font-size: 13px;
+  color: var(--cor-texto-suave);
+  margin-top: 20px;
+}
+
+.tela-login__cadastro a {
+  color: var(--cor-primaria);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tela-login__destaque {
+  flex: 0 0 42%;
+  background: var(--cor-primaria);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 56px;
+  box-sizing: border-box;
+}
+
+.tela-login__destaque-selo {
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.tela-login__destaque-texto h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.tela-login__destaque-texto p {
+  font-size: 14px;
+  opacity: 0.85;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .tela-login__destaque {
+    display: none;
+  }
+}

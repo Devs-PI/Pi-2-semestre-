@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-fundo: #eae7dd;
+  --cor-fundo-secundaria: #f1efe8;
+  --cor-cartao: #ffffff;
+  --cor-texto: #2c2c2a;
+  --cor-texto-suave: #6b6a63;
+  --cor-borda: #e4e0d4;
+  --cor-primaria: #d85a30;
+  --cor-primaria-hover: #c24f29;
+  --cor-sucesso: #1d9e75;
+  --cor-input-fundo: #fcfbf8;
+  --raio-botao: 8px;
+  --raio-cartao: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+button {
+  font-family: inherit;
+}

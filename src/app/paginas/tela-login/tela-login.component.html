@@ -11,24 +11,12 @@
 
       <label>
         E-mail
-        <input
-          type="email"
-          name="email"
-          placeholder="voce@email.com"
-          [(ngModel)]="email"
-          required
-        />
+        <input type="email" name="email" placeholder="voce@email.com" [(ngModel)]="email" required />
       </label>
 
       <label>
         Senha
-        <input
-          type="password"
-          name="senha"
-          placeholder="••••••••"
-          [(ngModel)]="senha"
-          required
-        />
+        <input type="password" name="senha" placeholder="••••••••" [(ngModel)]="senha" required />
       </label>
 
       <p class="tela-login__erro" *ngIf="mensagemErro">{{ mensagemErro }}</p>

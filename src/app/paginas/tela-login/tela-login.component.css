@@ -15,6 +15,16 @@
 .tela-login__formulario form {
   width: 100%;
   max-width: 380px;
+  border: 3px solid #87c3ff;
+  border-radius: 25px;
+  padding: 25px;
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(212, 175, 106, 0.08),
+      transparent 40%
+    ),
+    linear-gradient(160deg, #7fddfa89 0%, #87c3ff90 40%, #6ed8ff5a 100%);
 }
 
 .tela-login__formulario label {
@@ -39,7 +49,7 @@
   color: var(--cor-texto);
 }
 
-.tela-login__formulario button[type='submit'] {
+.tela-login__formulario button[type="submit"] {
   width: 100%;
   padding: 14px 0;
   background: var(--cor-primaria);
@@ -53,11 +63,11 @@
   margin-top: 8px;
 }
 
-.tela-login__formulario button[type='submit']:hover:not(:disabled) {
+.tela-login__formulario button[type="submit"]:hover:not(:disabled) {
   background: var(--cor-primaria-hover);
 }
 
-.tela-login__formulario button[type='submit']:disabled {
+.tela-login__formulario button[type="submit"]:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }

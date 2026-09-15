@@ -130,6 +130,21 @@
   box-sizing: border-box;
 }
 
+#imagemini {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin: 24px 0;
+}
+
+#imagemini img {
+  max-width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
 .tela-login__destaque-selo {
   font-size: 15px;
   font-weight: 600;

@@ -9,19 +9,29 @@
   align-items: center;
   justify-content: center;
   padding: 48px 24px;
-  background: var(--cor-cartao);
+  background: url("/assets/Fundojogos.png") center / cover no-repeat;
 }
 
 .tela-cadastro__formulario form {
   width: 100%;
   max-width: 380px;
+  border: 3px solid #071b3a;
+  color: #fff;
+  border-radius: 25px;
+  padding: 25px;
+  background: #071b3a;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 27, 58, 1) 0%,
+    rgba(64, 87, 133, 1) 100%
+  );
 }
 
 .tela-cadastro__formulario label {
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: var(--cor-texto);
+  color: #fff;
   margin-bottom: 18px;
 }
 
@@ -72,10 +82,9 @@
 }
 
 .tela-cadastro__logo-marca {
-  width: 32px;
-  height: 32px;
-  border-radius: 9px;
-  background: var(--cor-primaria);
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
 }
 
 .tela-cadastro__formulario h1 {
@@ -86,7 +95,7 @@
 
 .tela-cadastro__subtitulo {
   font-size: 14px;
-  color: var(--cor-texto-suave);
+  color: #acabab;
   margin: 0 0 32px;
 }
 
@@ -99,12 +108,12 @@
 .tela-cadastro__login {
   text-align: center;
   font-size: 13px;
-  color: var(--cor-texto-suave);
+  color: #acabab;
   margin-top: 20px;
 }
 
 .tela-cadastro__login a {
-  color: var(--cor-primaria);
+  color: #fff;
   font-weight: 600;
   text-decoration: none;
 }
@@ -118,6 +127,21 @@
   justify-content: space-between;
   padding: 56px;
   box-sizing: border-box;
+}
+
+#imagemini {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin: 24px 0;
+}
+
+#imagemini img {
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 16px;
 }
 
 .tela-cadastro__destaque-selo {

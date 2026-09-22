@@ -103,6 +103,7 @@ export class ProdutoService {
       .eq('id', id);
 
     if (error) {
+      console.error('Erro ao atualizar produto:', error);
       throw new Error('Não foi possível atualizar o produto.');
     }
   }

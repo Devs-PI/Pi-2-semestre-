@@ -17,6 +17,7 @@ create table produtos (
   nome text not null,
   descricao text,
   preco numeric(10,2) not null,
+  preco_antigo numeric(10,2),
   url_imagem text,
   quantidade_estoque int4 not null default 0,
   disponivel bool not null default true,

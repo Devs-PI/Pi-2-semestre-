@@ -7,6 +7,9 @@
 
   <div class="cartao-produto__info">
     <h3 class="cartao-produto__nome">{{ produto.nome }}</h3>
+    <p *ngIf="produto.preco_antigo && produto.preco_antigo > produto.preco" class="cartao-produto__preco-antigo">
+      {{ produto.preco_antigo | currency: 'BRL' }}
+    </p>
     <p class="cartao-produto__preco">{{ produto.preco | currency: 'BRL' }}</p>
 
     <button

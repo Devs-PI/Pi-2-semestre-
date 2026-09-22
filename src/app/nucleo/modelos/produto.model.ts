@@ -3,6 +3,7 @@ export interface Produto {
   nome: string;
   descricao: string;
   preco: number;
+  preco_antigo?: number | null;
   url_imagem: string;
   quantidade_estoque: number;
   disponivel: boolean;
@@ -14,6 +15,7 @@ export interface ProdutoFormulario {
   nome: string;
   descricao: string;
   preco: number;
+  preco_antigo?: number | null;
   quantidade_estoque: number;
   disponivel: boolean;
 }

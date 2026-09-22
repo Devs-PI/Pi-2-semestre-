@@ -34,6 +34,11 @@
           </label>
         </div>
 
+        <label>
+          Valor anterior (opcional, exibido riscado como promoção)
+          <input type="number" step="0.01" name="precoAntigo" placeholder="R$ 0,00" [(ngModel)]="dadosFormulario.preco_antigo" />
+        </label>
+
         <label class="admin-cadastro-produto__disponivel">
           <input type="checkbox" name="disponivel" [(ngModel)]="dadosFormulario.disponivel" />
           Produto disponível

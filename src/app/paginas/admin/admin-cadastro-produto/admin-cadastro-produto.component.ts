@@ -21,6 +21,7 @@ export class AdminCadastroProdutoComponent implements OnInit {
     nome: '',
     descricao: '',
     preco: 0,
+    preco_antigo: null,
     quantidade_estoque: 0,
     disponivel: true,
   };
@@ -51,6 +52,7 @@ export class AdminCadastroProdutoComponent implements OnInit {
           nome: produtoExistente.nome,
           descricao: produtoExistente.descricao,
           preco: produtoExistente.preco,
+          preco_antigo: produtoExistente.preco_antigo ?? null,
           quantidade_estoque: produtoExistente.quantidade_estoque,
           disponivel: produtoExistente.disponivel,
         };

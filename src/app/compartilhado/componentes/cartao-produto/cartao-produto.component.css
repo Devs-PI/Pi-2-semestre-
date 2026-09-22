@@ -35,6 +35,14 @@
   margin: 2px 0 0;
 }
 
+.cartao-produto__preco-antigo {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--cor-texto-suave);
+  text-decoration: line-through;
+  margin: 2px 0 0;
+}
+
 .cartao-produto__botao {
   width: 100%;
   margin-top: 10px;

@@ -55,18 +55,3 @@ npm start
 ```
 
 Acesse em `http://localhost:4200`.
-
-## Estrutura
-
-Ver a árvore de pastas completa na documentação técnica. Resumo:
-
-- `src/app/nucleo` — serviços, guards e modelos (lógica compartilhada)
-- `src/app/paginas` — as telas da aplicação
-- `src/app/compartilhado` — componentes reutilizáveis (cabeçalho, cartão de produto)
-- `src/environments` — configuração da API do Supabase
-
-## Limitações conhecidas (ver documentação técnica, seção 6)
-
-- Autenticação própria, sem Supabase Auth → RLS desabilitado por padrão.
-- Sem integração de pagamento.
-- Loja única (um só admin, sem multi-vendedor).

@@ -192,3 +192,31 @@
     width: 100%;
   }
 }
+
+@media (max-width: 600px) {
+  .carrinho-compras {
+    padding: 24px 16px 48px;
+  }
+
+  .carrinho-compras__lista {
+    padding: 8px 16px;
+  }
+
+  .carrinho-compras__item {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .carrinho-compras__nome {
+    order: 1;
+    flex: 1 1 100%;
+  }
+
+  .carrinho-compras__preco-unitario {
+    display: none;
+  }
+
+  .carrinho-compras__subtotal {
+    margin-left: auto;
+  }
+}

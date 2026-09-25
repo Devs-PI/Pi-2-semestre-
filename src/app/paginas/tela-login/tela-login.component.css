@@ -167,3 +167,13 @@
     display: none;
   }
 }
+
+@media (max-width: 420px) {
+  .tela-login__formulario {
+    padding: 32px 16px;
+  }
+
+  .tela-login__formulario form {
+    padding: 20px;
+  }
+}

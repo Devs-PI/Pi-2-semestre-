@@ -121,3 +121,17 @@
 .finalizar-pedido__voltar:hover {
   background: var(--cor-fundo-secundaria);
 }
+
+@media (max-width: 600px) {
+  .finalizar-pedido {
+    padding: 32px 16px;
+  }
+
+  .finalizar-pedido__card {
+    padding: 24px;
+  }
+
+  .finalizar-pedido__sucesso {
+    padding: 40px 24px;
+  }
+}

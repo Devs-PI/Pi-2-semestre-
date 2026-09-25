@@ -133,3 +133,24 @@
   font-weight: 700;
   color: var(--cor-primaria);
 }
+
+@media (max-width: 600px) {
+  .admin-pedidos {
+    padding: 24px 16px 48px;
+  }
+
+  .admin-pedidos__card {
+    padding: 20px 16px 4px;
+  }
+
+  .admin-pedidos__topo {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .admin-pedidos__cliente,
+  .admin-pedidos__data {
+    display: block;
+    margin-left: 0;
+  }
+}

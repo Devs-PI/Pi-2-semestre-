@@ -183,3 +183,32 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 600px) {
+  .admin-cadastro-produto {
+    padding: 24px 16px 48px;
+  }
+
+  .admin-cadastro-produto__campos,
+  .admin-cadastro-produto__upload {
+    padding: 20px;
+  }
+
+  .admin-cadastro-produto__linha-dupla {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-cadastro-produto__area-upload {
+    height: 180px;
+  }
+
+  .admin-cadastro-produto__rodape {
+    flex-wrap: wrap;
+  }
+
+  .admin-cadastro-produto__rodape button,
+  .admin-cadastro-produto__cancelar {
+    flex: 1;
+    justify-content: center;
+  }
+}

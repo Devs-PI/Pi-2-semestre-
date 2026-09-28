@@ -1,7 +1,7 @@
 .cabecalho {
   height: 80px;
-  background: #071b3a;
-  border-bottom: 1px solid var(--cor-borda);
+  background: var(--cor-primaria);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   gap: 32px;
@@ -30,7 +30,7 @@
   max-width: 480px;
   margin: 0 auto;
   position: relative;
-  color: var(--cor-texto-suave);
+  color: rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
 }
@@ -43,16 +43,21 @@
 .cabecalho__busca input {
   width: 100%;
   padding: 11px 16px 11px 44px;
-  border: none;
-  background: var(--cor-fundo-secundaria);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 999px;
   font-size: 14px;
   font-family: inherit;
-  color: var(--cor-texto);
+  color: #fff;
 }
 
 .cabecalho__busca input::placeholder {
-  color: var(--cor-texto-suave);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.cabecalho__busca input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .cabecalho__acoes {
@@ -67,20 +72,24 @@
   width: 40px;
   height: 40px;
   border-radius: 999px;
-  background: var(--cor-fundo-secundaria);
+  background: rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--cor-texto);
+  color: #fff;
   text-decoration: none;
   flex-shrink: 0;
+}
+
+.cabecalho__carrinho:hover {
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .cabecalho__carrinho-contador {
   position: absolute;
   top: -4px;
   right: -4px;
-  background: var(--cor-primaria);
+  background: var(--cor-sucesso);
   color: #fff;
   font-size: 10px;
   font-weight: 700;
@@ -129,7 +138,7 @@
 }
 
 .cabecalho__sair {
-  border: 1px solid var(--cor-borda);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   background: transparent;
   color: #fff;
   font-size: 13px;
@@ -141,7 +150,7 @@
 }
 
 .cabecalho__sair:hover {
-  background: var(--cor-fundo-secundaria);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 @media (max-width: 900px) {

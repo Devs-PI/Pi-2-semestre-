@@ -1,44 +1,102 @@
-.lista-produtos {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 40px 32px 64px;
+.lista-produtos__faixa {
+  background: var(--cor-primaria);
+  padding: 56px 32px 120px;
 }
 
-.lista-produtos h1 {
-  font-size: 26px;
-  font-weight: 700;
-  margin: 0 0 24px;
+.lista-produtos__faixa-conteudo {
+  max-width: 1216px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.lista-produtos__titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lista-produtos__saudacao {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.lista-produtos__titulo h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #fff;
+}
+
+.lista-produtos__contagem {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+
+.lista-produtos {
+  max-width: 1280px;
+  margin: -80px auto 0;
+  padding: 0 32px 72px;
+}
+
+.lista-produtos__aviso,
+.lista-produtos__erro {
+  background: var(--cor-cartao);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 0 0 20px;
+  font-size: 14px;
 }
 
 .lista-produtos__aviso {
   color: var(--cor-texto-suave);
-  font-size: 14px;
 }
 
 .lista-produtos__erro {
   color: #dc2626;
-  font-size: 14px;
 }
 
 .lista-produtos__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
 }
 
 @media (max-width: 1100px) {
   .lista-produtos__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 800px) {
   .lista-produtos__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lista-produtos__titulo h1 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 520px) {
+  .lista-produtos__faixa {
+    padding: 40px 16px 100px;
+  }
+
+  .lista-produtos {
+    padding: 0 16px 48px;
+  }
+
   .lista-produtos__grid {
     grid-template-columns: 1fr;
   }

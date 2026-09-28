@@ -1,24 +1,45 @@
 <article class="cartao-produto">
-  <img
-    class="cartao-produto__imagem"
-    [src]="produto.url_imagem"
-    [alt]="produto.nome"
-  />
+  <div class="cartao-produto__midia">
+    <img class="cartao-produto__imagem" [src]="produto.url_imagem" [alt]="produto.nome" />
+
+    <span *ngIf="produto.disponivel && percentualDesconto" class="cartao-produto__selo">
+      {{ percentualDesconto }}% OFF
+    </span>
+
+    <div *ngIf="!produto.disponivel" class="cartao-produto__indisponivel">
+      <span>Indisponível</span>
+    </div>
+  </div>
 
   <div class="cartao-produto__info">
     <h3 class="cartao-produto__nome">{{ produto.nome }}</h3>
-    <p *ngIf="produto.preco_antigo && produto.preco_antigo > produto.preco" class="cartao-produto__preco-antigo">
-      {{ produto.preco_antigo | currency: 'BRL' }}
-    </p>
-    <p class="cartao-produto__preco">{{ produto.preco | currency: 'BRL' }}</p>
 
-    <button
-      type="button"
-      class="cartao-produto__botao"
-      [disabled]="!produto.disponivel"
-      (click)="adicionarAoCarrinho.emit(produto)"
-    >
-      {{ produto.disponivel ? 'Adicionar ao carrinho' : 'Indisponível' }}
-    </button>
+    <div class="cartao-produto__rodape">
+      <div class="cartao-produto__precos">
+        <p *ngIf="produto.preco_antigo && produto.preco_antigo > produto.preco" class="cartao-produto__preco-antigo">
+          {{ produto.preco_antigo | currency: 'BRL' }}
+        </p>
+        <p class="cartao-produto__preco">{{ produto.preco | currency: 'BRL' }}</p>
+      </div>
+
+      <button
+        type="button"
+        class="cartao-produto__botao"
+        [disabled]="!produto.disponivel"
+        [attr.aria-label]="produto.disponivel ? 'Adicionar ao carrinho' : 'Indisponível'"
+        [title]="produto.disponivel ? 'Adicionar ao carrinho' : 'Indisponível'"
+        (click)="adicionarAoCarrinho.emit(produto)"
+      >
+        <svg *ngIf="produto.disponivel" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <svg *ngIf="!produto.disponivel" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"></circle>
+          <line x1="5.6" y1="5.6" x2="18.4" y2="18.4"></line>
+        </svg>
+      </button>
+    </div>
   </div>
 </article>

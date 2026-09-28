@@ -4,6 +4,7 @@ import { CabecalhoComponent } from '../../compartilhado/componentes/cabecalho/ca
 import { CartaoProdutoComponent } from '../../compartilhado/componentes/cartao-produto/cartao-produto.component';
 import { ProdutoService } from '../../nucleo/servicos/produto.service';
 import { CarrinhoService } from '../../nucleo/servicos/carrinho.service';
+import { AutenticacaoService } from '../../nucleo/servicos/autenticacao.service';
 import { Produto } from '../../nucleo/modelos/produto.model';
 
 @Component({
@@ -20,8 +21,17 @@ export class ListaProdutosComponent implements OnInit {
 
   constructor(
     private produtoService: ProdutoService,
-    private carrinhoService: CarrinhoService
+    private carrinhoService: CarrinhoService,
+    public autenticacaoService: AutenticacaoService
   ) {}
+
+  get totalDisponiveis(): number {
+    return this.listaProdutos.filter((produto) => produto.disponivel).length;
+  }
+
+  primeiroNome(nome: string): string {
+    return nome.trim().split(/\s+/)[0];
+  }
 
   async ngOnInit(): Promise<void> {
     try {

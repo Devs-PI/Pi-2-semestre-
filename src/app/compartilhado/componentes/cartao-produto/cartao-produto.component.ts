@@ -12,4 +12,10 @@ import { Produto } from '../../../nucleo/modelos/produto.model';
 export class CartaoProdutoComponent {
   @Input({ required: true }) produto!: Produto;
   @Output() adicionarAoCarrinho = new EventEmitter<Produto>();
+
+  get percentualDesconto(): number {
+    const { preco, preco_antigo } = this.produto;
+    if (!preco_antigo || preco_antigo <= preco) return 0;
+    return Math.round((1 - preco / preco_antigo) * 100);
+  }
 }

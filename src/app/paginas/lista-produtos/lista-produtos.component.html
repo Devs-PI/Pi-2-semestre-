@@ -1,8 +1,20 @@
 <app-cabecalho></app-cabecalho>
 
-<main class="lista-produtos">
-  <h1>Produtos</h1>
+<section class="lista-produtos__faixa">
+  <div class="lista-produtos__faixa-conteudo">
+    <div class="lista-produtos__titulo">
+      <span class="lista-produtos__saudacao" *ngIf="autenticacaoService.usuarioLogado() as usuario">
+        Olá, {{ primeiroNome(usuario.nome) }}
+      </span>
+      <h1>Produtos</h1>
+    </div>
+    <span class="lista-produtos__contagem" *ngIf="!carregando && listaProdutos.length">
+      {{ listaProdutos.length }} itens · {{ totalDisponiveis }} disponíveis
+    </span>
+  </div>
+</section>
 
+<main class="lista-produtos">
   <p class="lista-produtos__aviso" *ngIf="carregando">Carregando produtos...</p>
   <p class="lista-produtos__erro" *ngIf="mensagemErro">{{ mensagemErro }}</p>
   <p class="lista-produtos__aviso" *ngIf="!carregando && listaProdutos.length === 0 && !mensagemErro">
